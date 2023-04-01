@@ -21,6 +21,19 @@ document.getElementById("diary-buy-btn").addEventListener('click', function(){
     totalPrice();
 })
 
+document.getElementById("button").addEventListener('click', function(){
+    const promoCode = getInputValue("promo-code");
+    if (promoCode == 101) {
+        const total = document.getElementById("total").innerText;
+        const sum = total - parseInt(total) * 0.1;
+        setInnerText("all-total", sum);
+    }
+    else{
+        alert("Wrong promotion code, Try again with valid code.")
+    }
+    
+})
+
     function setInnerText (id, value) {
         document.getElementById(id).innerText = value;
     }
